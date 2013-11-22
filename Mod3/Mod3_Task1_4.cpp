@@ -69,11 +69,9 @@ void print_int(int data) {
 
 void tree_traverse(node_t *node) {
   if (node == NULL) return;
-    int max = 1;
   queue<node_t*> q;
     q.push(node);
     while(!q.empty()) {
-        if (max < q.size()) max = q.size();
         node_t* current_node = q.front();
         q.pop();
         printf("%d ", current_node->data);
@@ -82,7 +80,6 @@ void tree_traverse(node_t *node) {
         if(current_node->right != NULL)
             q.push(current_node->right);
     }
-    printf("\n%d\n", max);
 }
 
 int main() {
